@@ -16,4 +16,7 @@ public class HoneyPlayerManager {
         honeyPlayerHashMap.putIfAbsent(uuid, new HoneyPlayer(uuid));
         return honeyPlayerHashMap.get(uuid);
     }
+    public HoneyPlayer removePlayer(final UUID uuid) {
+        return honeyPlayerHashMap.remove(uuid);
+    }
 }
