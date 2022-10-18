@@ -6,6 +6,9 @@ import lombok.Getter;
 import org.bukkit.plugin.Plugin;
 
 public class HoneyMenuManager {
+    @Getter
+    private static HoneyMenuManager honeyMenuManager;
+
     private final Plugin plugin;
 
     @Getter
@@ -13,6 +16,7 @@ public class HoneyMenuManager {
     private final HoneyMenuInteractionManager honeyMenuInteractionManager;
 
     public HoneyMenuManager(final Plugin plugin) {
+        this.honeyMenuManager = this;
         this.plugin = plugin;
 
         this.honeyPlayerManager = new HoneyPlayerManager();
