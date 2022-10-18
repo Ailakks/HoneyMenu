@@ -1,5 +1,6 @@
 package com.cortmnzz.honeymenu.menu;
 
+import com.cortmnzz.honeymenu.HoneyMenuManager;
 import com.cortmnzz.honeymenu.event.MenuInteractEvent;
 import com.cortmnzz.honeymenu.managers.HoneyMenuInteractionManager;
 import lombok.Getter;
@@ -30,6 +31,7 @@ public class HoneyMenu {
         return this;
     }
     public void open(final Player bukkitPlayer) {
+        HoneyMenuManager.getHoneyMenuManager().getHoneyPlayerManager().getPlayer(bukkitPlayer.getUniqueId()).setCurrentOpenedMenu(this);
         bukkitPlayer.openInventory(bukkitInventory);
     }
 }

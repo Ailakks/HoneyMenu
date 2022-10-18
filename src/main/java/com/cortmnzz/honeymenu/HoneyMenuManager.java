@@ -1,6 +1,7 @@
 package com.cortmnzz.honeymenu;
 
 import com.cortmnzz.honeymenu.listeners.InventoryClickListener;
+import com.cortmnzz.honeymenu.listeners.InventoryCloseListener;
 import com.cortmnzz.honeymenu.managers.HoneyPlayerManager;
 import lombok.Getter;
 import org.bukkit.Bukkit;
@@ -19,5 +20,6 @@ public class HoneyMenuManager {
         this.honeyPlayerManager = new HoneyPlayerManager();
 
         Bukkit.getPluginManager().registerEvents(new InventoryClickListener(), plugin);
+        Bukkit.getPluginManager().registerEvents(new InventoryCloseListener(), plugin);
     }
 }
