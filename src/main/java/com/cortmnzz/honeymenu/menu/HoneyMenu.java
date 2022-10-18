@@ -13,6 +13,7 @@ import java.util.function.Consumer;
 public class HoneyMenu {
     @Getter
     private final HoneyMenuInteractionManager honeyMenuInteractionManager;
+    @Getter
     private final Inventory bukkitInventory;
 
     public HoneyMenu(final String title, int size) {
