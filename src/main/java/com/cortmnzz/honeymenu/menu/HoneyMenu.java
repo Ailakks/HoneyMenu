@@ -20,12 +20,14 @@ public class HoneyMenu {
         this.bukkitInventory = Bukkit.createInventory(null, size, title);
         this.honeyMenuInteractionManager = new HoneyMenuInteractionManager();
     }
-    public void setItem(final int slot, final ItemStack bukkitItemStack) {
+    public HoneyMenu setItem(final int slot, final ItemStack bukkitItemStack) {
         this.bukkitInventory.setItem(slot, bukkitItemStack);
+        return this;
     }
-    public void setClickableItem(final int slot, final ItemStack bukkitItemStack, final Consumer<MenuInteractEvent> consumer) {
+    public HoneyMenu setClickableItem(final int slot, final ItemStack bukkitItemStack, final Consumer<MenuInteractEvent> consumer) {
         this.honeyMenuInteractionManager.setConsumer(slot, consumer);
         setItem(slot, bukkitItemStack);
+        return this;
     }
     public void open(final Player bukkitPlayer) {
         bukkitPlayer.openInventory(bukkitInventory);
