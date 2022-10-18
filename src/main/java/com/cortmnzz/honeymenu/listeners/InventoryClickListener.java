@@ -14,6 +14,11 @@ public class InventoryClickListener implements Listener {
     public void onInventoryClick(final InventoryClickEvent event) {
         if (event.getWhoClicked() instanceof Player) {
             final HoneyPlayer honeyPlayer = HoneyMenuManager.getHoneyMenuManager().getHoneyPlayerManager().getPlayer(event.getWhoClicked().getUniqueId());
+
+            if (!Objects.isNull(honeyPlayer.getCurrentOpenedMenu()) &&
+                    !Objects.isNull(honeyPlayer.getCurrentOpenedMenu().getHoneyMenuInteractionManager().getConsumer(event.getSlot()))) {
+                honeyPlayer.getCurrentOpenedMenu().getHoneyMenuInteractionManager().getConsumer(event.getSlot()).accept(event);
+            }
         }
     }
 }
